@@ -1,12 +1,29 @@
 ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-    entry: './app.js',
+    entry: path.join(__dirname, 'src/app.js'),
     output: {
+        path: path.join(__dirname, 'dist'),  
         filename: 'bundle.[name].js'
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                exclude: [/node_modules/],
+                use: [{
+                    loader: 'babel-loader',
+                    options: { presets: ['es2015'] }
+                }],
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: './images/[name].[ext]',
+                },
+            },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
