@@ -1,7 +1,13 @@
+const webpack = require('webpack');
 ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+    resolve: {
+        alias: {
+            jquery: "jquery/src/jquery"
+        }
+    },
     entry: path.join(__dirname, 'src/app.js'),
     output: {
         path: path.join(__dirname, 'dist'),  
@@ -42,5 +48,9 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({ filename: 'bundle.[name].css'}),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ],
 };
