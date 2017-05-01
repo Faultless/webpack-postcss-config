@@ -1,34 +1,25 @@
-!DOCTYPE HTML
+<!DOCTYPE HTML>
 <html>
 <head>
     <link rel="stylesheet" href="./dist/bundle.main.css">
 </head>
 <body>
     <header class="header">
-        <div class="floatLeft"><a href="" class="logoHolder"></a></div>
+        <div class="floatLeft"><a href="" class="logoHolder">ParaCrawler</a></div>
         <div class="floatRight">
             <ul class="nav">
-                <li><a href="javascript:;">test link</a></li>
-                <li><a href="javascript:;">test link</a></li>
-                <li><a href="javascript:;">test link</a></li>
             </ul>
         </div>
     </header>
-    <div class="mainSlider">
-        <ul class="owl-carousel">
-            <li class="slides">
-                <div class="sliderContent">
-                    <h3>Example slide</h3>
-                    <div class="slideDescription">Example Description of the slide</div>
-                </div>
-            </li>
-            <li class="slides">
-                <div class="sliderContent">
-                    <h3>Example 2 of a slide</h3>
-                    <div class="slideDescription">Description of second slide.</div>
-                </div>
-            </li>
-        </ul>
+    <div id="crawlerApp">
+        <div class="searchBar">
+            <input type="text" v-model="searchString" id="searchField">
+        </div>
+        <div class="searchResults" v-if="validSearch">
+            <ul>
+                <search-item v-for="item in searchList" v-bind:search="item":key="item.id"></search-item>
+            </ul>
+        </div>
     </div>
     <footer class="footer">
         <div class="floatLeft"></div>

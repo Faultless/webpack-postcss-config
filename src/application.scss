@@ -1,5 +1,24 @@
 @import './theme.scss';
 
+body {
+    font-family: $base-font-family;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    padding: 10px;
+    & floatLeft {
+        float: left;
+    }
+    & floatRight {
+        float: right;
+    }
+}
+
 article {
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -7,4 +26,12 @@ article {
 
 .redBackground {
     background: red;
+}
+
+.owl-carousel {
+    background: green;
+}
+
+.owl-carousel .slideDescription {
+    font-size: $base-font-size;
 }

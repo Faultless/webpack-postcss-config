@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
@@ -9,6 +10,7 @@ module.exports = {
     },
     module: {
         rules: [
+            // ADD FONT LOADER
             {
                 test: /\.js$/,
                 exclude: [/node_modules/],
@@ -42,5 +44,11 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({ filename: 'bundle.[name].css'}),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            "window.Vue": "Vue"
+        })
     ],
 };
