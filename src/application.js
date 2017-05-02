@@ -17,11 +17,7 @@ var crawlerApp = new Vue({
     data: {
         validSearch: false,
         searchString: '',
-        searchList: [
-            { title: 'veggies', description: 'example description', link: 'http://www.google.com' },
-            { title: 'commies', description: 'example description2', link: 'http://www.google.com' },
-            { title: 'peterdager', description: 'example description3', link: 'http://www.google.com' }
-        ]
+        searchList: []
     },
     watch: {
         searchString: function (newSearch) {

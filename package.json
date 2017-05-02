@@ -10,6 +10,7 @@
     "file-loader": "^0.11.1",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.2",
+    "normalize.css": "^6.0.0",
     "owl.carousel": "^2.2.0",
     "postcss": "^5.2.16",
     "postcss-cssnext": "^2.10.0",

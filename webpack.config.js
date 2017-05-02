@@ -10,7 +10,13 @@ module.exports = {
     },
     module: {
         rules: [
-            // ADD FONT LOADER
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'fonts/[name].[ext]',
+                },
+            },
             {
                 test: /\.js$/,
                 exclude: [/node_modules/],
